@@ -45,7 +45,7 @@ oth-page
                                 @endif
                             </div>
                             <div class="input__box">
-                                <label>@lang('labels.account.last_name') <span>*</span></label>
+                                <label>@lang('labels.account.last_name')</label>
                                 <input type="text" name="last_name" value="{{ old('last_name') }}">
                                 @if ($errors->has('last_name'))
                                 <div class="has-error">
@@ -54,7 +54,7 @@ oth-page
                                 @endif
                             </div>
                             <div class="input__box">
-                                <label>@lang('labels.account.first_name') <span>*</span></label>
+                                <label>@lang('labels.account.first_name')</label>
                                 <input type="text" name="first_name" value="{{ old('first_name') }}">
                                 @if ($errors->has('first_name'))
                                 <div class="has-error">

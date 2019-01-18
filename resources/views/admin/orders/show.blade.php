@@ -117,13 +117,17 @@
                     </table>
                     <div class="text-right">
                         @if ($order->status == 'pending')
-                            <form method="POST" action="{{ route('admin.orders.update.status', [$order->id, 'approved']) }}">
+                            <form method="POST" action="{{ route('admin.orders.update.status', $order->id) }}">
                                 @csrf
+                                @method('PUT')
+                                <input type="hidden" name="status" value="approved">
                                 <button class="btn btn-app-cyan">Duyệt đơn</button>
                             </form>
                         @elseif ($order->status == 'approved')
-                            <form method="POST" action="{{ route('admin.orders.update.status', [$order->id, 'complete']) }}">
+                            <form method="POST" action="{{ route('admin.orders.update.status', $order->id) }}">
                                 @csrf
+                                @method('PUT')
+                                <input type="hidden" name="status" value="complete">
                                 <button class="btn btn-app-green">Hoàn tất</button>
                             </form>
                         @endif

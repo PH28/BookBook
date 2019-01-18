@@ -24,9 +24,9 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'email'      => 'required|string|email|max:255|unique:users',
-            'last_name'  => 'string|min:2|max:10',
-            'first_name' => 'string|min:2|max:10',
+            'email'      => 'required|email|max:255|unique:users',
+            'last_name'  => 'min:2|max:10|nullable',
+            'first_name' => 'min:2|max:10|nullable',
             'birthday'   => 'date_format:d/m/Y|before:tomorrow|nullable',
             'password'   => 'required|string|min:6|confirmed',
         ];
@@ -41,15 +41,12 @@ class RegisterRequest extends FormRequest
     {
         return [
             'email.required'     => 'Vui lòng nhập địa chỉ email',
-            'email.string'       => 'Địa chỉ email phải là một chuỗi',
             'email.email'        => 'Địa chỉ email không hợp lệ',
             'email.unique'       => 'Địa chỉ này email đã tồn tại',
-            'last_name.string'   => '',
             'last_name.min'      => 'Họ phải có ít nhất 2 ký tự',
             'last_name.max'      => 'Họ không được quá 10 ký tự',
             'first_name.min'     => 'Tên phải có ít nhất 2 ký tự',
             'first_name.max'     => 'Tên không được quá 10 ký tự',
-            'first_name.string'  => '',
             'birthday.before'    => 'Ngày sinh không hợp lệ',
             'password.required'  => 'Vui lòng nhập mật khẩu',
             'password.min'       => 'Mật khẩu phải có ít nhất 6 ký tự',

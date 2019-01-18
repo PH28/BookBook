@@ -37,8 +37,8 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
 
-        if (url()->previous() == 'http://bookbook.com/checkout') {
-            $this->redirectTo = '/checkout';
+        if (url()->previous() == 'http://bookbook.com/cart/checkout') {
+            $this->redirectTo = '/cart/checkout';
         }
     }
 

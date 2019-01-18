@@ -120,11 +120,30 @@
     @section('javascript')
     <script>
         jQuery().ready(function ($) {
-            $('select[name="city_id"]').on('change', function (event) {
+
+            city = $('select[name="city_id"]');
+            district = $('select[name="district_id"]');
+
+            $city_id = city.val();
+            districts = '';
+
+            $.ajax({
+                url: '/api/v1/cities/' + $city_id + '/districts',
+                type: 'GET',
+                success: function(response) {
+                    $.each(response, function(index, value) {
+                        districts += '<option value="' + value['id'] + '">' + value['name'] + '</option>'
+                    });
+
+                    district.html(districts);
+                }
+            });
+
+            city.on('change', function (event) {
                 event.preventDefault();
 
-                $city_id = $(this).val();
-                var districts = '';
+                $city_id = city.val();
+                districts = '';
                 
                 $.ajax({
                     url: '/api/v1/cities/' + $city_id + '/districts',
@@ -134,7 +153,7 @@
                             districts += '<option value="' + value['id'] + '">' + value['name'] + '</option>'
                         });
 
-                        $('select[name="district_id"]').html(districts);
+                        district.html(districts);
                     }
                 });
             });

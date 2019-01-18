@@ -1,5 +1,5 @@
 <ul class="wn__pagination" style="margin-top: 20px !important;">
-    @if ($paginator->currentPage() != $paginator->firstItem())
+    @if ($paginator->currentPage() != $paginator->firstItem() && $paginator->total() != 0)
         <li><a href="{{ $paginator->previousPageUrl() }}"><i class="zmdi zmdi-chevron-left"></i></a></li>
     @endif
 

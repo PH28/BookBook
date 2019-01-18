@@ -105,7 +105,6 @@ Route::get('account/address/create', 'UserController@createNewAddress')->name('a
 Route::post('account/addresses','UserController@storeNewAddress')->name('account.address.storeNewAddress');
 Route::delete('account/addresses/{address}', 'UserController@destroyAddressById')->name('account.address.delete');
 
-
 //Search
 Route::get('search', 'SearchController@index')->name('search');
 
@@ -113,6 +112,5 @@ Route::get('search', 'SearchController@index')->name('search');
 Route::get('cart', 'CartController@index')->name('cart.index');
 Route::get('cart/checkout', 'CartController@showCheckoutForm')->name('cart.show_checkout_form');
 Route::post('cart/checkout', 'CartController@checkout')->name('cart.checkout');
-
 
 Auth::routes();

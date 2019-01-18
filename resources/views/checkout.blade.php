@@ -196,7 +196,9 @@
                             <div class="customer_details mt--20 address-wrapper">
                                 @foreach ($addresses as $address)
                                     <div class="customar__field address-{{ $address->id }} mt--40" style="display: none;">
-                                        <h3>@lang('labels.address')</h3>
+                                        <h3 class="pull-left">@lang('labels.address')</h3>
+                                        <a href="{{ route('address.edit', $address->id) }}" class="btn btn-outline-dark pull-right">Sửa địa chỉ</a>
+                                        <div class="clearfix"></div>
                                         <div class="margin_between">
                                             <div class="input_box space_between">
                                                 <label>@lang('labels.account.last_name')</label>

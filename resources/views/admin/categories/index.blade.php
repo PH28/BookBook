@@ -147,7 +147,6 @@
 			                                            <form method="POST" action="{{ route('admin.categories.delete') }}" style="display: inline;">
 			                                            	@method('DELETE')
 			                                            	@csrf
-			                                            	
 			                                            </form>
 			                                            <button class="btn btn-xs btn-default" data-toggle="tooltip" title="" data-original-title="Xóa"><i class="ion-close"></i></button>
 	                                                </div>
@@ -278,7 +277,7 @@
 
 	    	$(document).on('input', 'input', function(event) {
 	    		event.preventDefault();
-	    		button = $(this).parent().parent().children().children('div').children('button');
+	    		button = $(this).parent().parent().children().children('div').children('button#btn-category-update');
 	    		button.removeAttr('disabled');
 	    		button.attr({
 	    			class: 'btn btn-xs btn-default'

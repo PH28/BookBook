@@ -99,14 +99,14 @@ class CartController extends Controller
     public function validateGuestRequest(Request $request)
     {
         $request->validate([
-            'last_name'    => 'required|string|min:2|max:10',
-            'first_name'   => 'required|string|min:2|max:10',
-            'email'        => 'required|string|email|max:255|unique:users',
+            'last_name'    => 'required|min:2|max:10',
+            'first_name'   => 'required|min:2|max:10',
+            'email'        => 'required|email|max:255|unique:users',
             'city_id'      => 'required|numeric',
             'district_id'  => 'required|numeric',
             'address'      => 'required',
             'phone'        => 'required|regex:/(0)[0-9]{9}/',
-            'password'     => 'required|string|min:6',
+            'password'     => 'required|min:6',
             'orderDetails' => 'required',
         ], [
             'last_name.required'   => 'Vui lòng nhập họ',
@@ -116,7 +116,6 @@ class CartController extends Controller
             'first_name.max'       => 'Tên không được quá 10 ký tự',
             'first_name.required'  => 'Vui lòng nhập tên',
             'email.required'       => 'Vui lòng nhập địa chỉ email',
-            'email.string'         => 'Địa chỉ email phải là một chuỗi',
             'email.email'          => 'Địa chỉ email không hợp lệ',
             'email.unique'         => 'Địa chỉ này email đã tồn tại. Vui lòng đăng nhập để việc thanh toán dễ dàng hơn!',
             'city_id.required'     => 'Vui lòng chọn thành phố',

@@ -71,6 +71,8 @@ return [
         'birthday'                  => 'Ngày sinh',
         'password'                  => 'Mật khẩu',
         'password_confirm'          => 'Xác nhận mật khẩu',
+        'new_password'              => 'Mật khẩu mới',
+        'new_password_confirm'      => 'Xác nhận mật khẩu mới',
         'forgot_password'           => 'Quên mật khẩu',
         'reset_password'            => 'Đặt lại mật khẩu',
         'send_forgot_password_link' => 'Gửi email đặt lại mật khẩu',

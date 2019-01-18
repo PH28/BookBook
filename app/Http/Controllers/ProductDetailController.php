@@ -2,11 +2,6 @@
 
 namespace Book\Http\Controllers;
 
-use Book\ProductDetail;
-use Book\Product;
-use Book\Image;
-use Book\Comment;
-use Book\Category;
 use Illuminate\Http\Request;
 
 class ProductDetailController extends Controller
@@ -19,18 +14,6 @@ class ProductDetailController extends Controller
     public function index()
     {
         //
-    }
-    public function singleProductId(Product $product, Category $category)
-    {
-   
-        $productDetail = $product->productDetail;
-        $images = $product->images;
-        $comments = $product->comments;
-        $category = $product->category;
-
-
-        return view('single_product', compact('product','category','productDetail','images','comments','categories'));
-        
     }
 
     /**

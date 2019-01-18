@@ -47,7 +47,7 @@ oth-page
                                 @endif
                             </div>
                             <div class="input__box">
-                                <label>@lang('labels.account.password') <span>*</span></label>
+                                <label>@lang('labels.account.new_password') <span>*</span></label>
                                 <input type="password" name="password">
                                 @if ($errors->has('password'))
                                 <div class="has-error">
@@ -56,7 +56,7 @@ oth-page
                                 @endif
                             </div>
                             <div class="input__box">
-                                <label>@lang('labels.account.password_confirm')<span>*</span></label>
+                                <label>@lang('labels.account.new_password_confirm')<span>*</span></label>
                                 <input type="password" name="password_confirmation">
                             </div>
                             <div class="form__btn">
